@@ -8,3 +8,41 @@ Imagine you are someone who works with NBA statistics. You want to identify how 
 ## How to use Courtside Analytics
 
 ## System Design
+
+``````mermaid
+graph LR
+    Query[Query]
+    Output[Output]
+    
+    subgraph Agent[Agent]
+        Prompt[Prompt]
+        LLM[LLM]
+        Tools
+        Prompt --> LLM
+        LLM <--> Tools
+    end
+    
+    subgraph Tools
+        Statmuse[Statmuse]
+        Calculator[Calculator]
+    end
+    
+    Tools <--> Environment[Environment]
+
+    Query --> Prompt
+    LLM --> Output
+
+    classDef default fill:#000000,stroke:#4a4a4a,stroke-width:1px,color:#e0e0e0;
+    classDef agent fill:#000033,stroke:#4a4a4a,stroke-width:1px,color:#e0e0e0;
+    classDef tools fill:#000066,stroke:#4a4a4a,stroke-width:1px,color:#e0e0e0;
+    class Agent agent;
+    class Tools tools;
+    
+    style Query fill:#000033,stroke:#4a4a4a,stroke-width:1px,color:#e0e0e0;
+    style Output fill:#000033,stroke:#4a4a4a,stroke-width:1px,color:#e0e0e0;
+    style LLM fill:#003300,stroke:#4a4a4a,stroke-width:1px,color:#e0e0e0;
+    style Environment fill:#330033,stroke:#4a4a4a,stroke-width:1px,color:#e0e0e0;
+
+    linkStyle default stroke:#4a4a4a,stroke-width:2px;
+    linkStyle 1 stroke:#4a4a4a,stroke-width:2px,fill:none,curve:curveBack;
+    linkStyle 2 stroke:#4a4a4a,stroke-width:2px,fill:none,curve:curveBack;

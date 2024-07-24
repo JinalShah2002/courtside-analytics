@@ -35,12 +35,3 @@ graph TD
     end
 
     linkStyle default stroke:#000000
-    
-    subgraph Agent
-        C
-        D
-        E
-    end
-    linkStyle default stroke:#4a4a4a,stroke-width:2px;
-    linkStyle 1 stroke:#4a4a4a,stroke-width:2px,fill:none,curve:curveBack;
-    linkStyle 2 stroke:#4a4a4a,stroke-width:2px,fill:none,curve:curveBack;

@@ -34,4 +34,4 @@ graph TD
         E
     end
 
-    linkStyle default stroke:#000000
+    linkStyle default stroke:#FFFFFF

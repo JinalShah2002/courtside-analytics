@@ -14,7 +14,7 @@ Introducing Courtside Analytics, an AI powered platform that enables users to qu
 graph TD
     A[User]
     B[Streamlit Web UI]
-    C[GPT 4.0]
+    C[GPT 4.o]
     D[calculator]
     E[Statmuse]
     F[Answer]

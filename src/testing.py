@@ -8,7 +8,7 @@ and messing around with functions.
 """
 import requests
 from bs4 import BeautifulSoup
-
+from langchain_community.tools import DuckDuckGoSearchRun
 
 # Statmuse Function
 def get_statmuse_response(query):
@@ -17,7 +17,7 @@ def get_statmuse_response(query):
     return requests.get(url).content
 
 # Test the function
-resp = get_statmuse_response('timberwolves points per game without anthony edwards')
+resp = get_statmuse_response('What is the Sixers current roster?')
 soup = BeautifulSoup(resp, 'html.parser')
 
 # with open('testing.txt', 'w') as f:
@@ -26,3 +26,8 @@ soup = BeautifulSoup(resp, 'html.parser')
 for content in soup.find_all('meta'):
     if content.get('name') == 'description':
         print(content.get('content'))
+print()
+
+# Testing out DuckDuckGo 
+search = DuckDuckGoSearchRun()
+print(search.invoke('What team is Paul George on?',backend='news'))

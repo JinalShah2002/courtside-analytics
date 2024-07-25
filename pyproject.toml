@@ -12,6 +12,11 @@ openai = "^1.37.0"
 langchain = "^0.2.11"
 langchain-openai = "^0.1.17"
 beautifulsoup4 = "^4.12.3"
+langchain-core = "^0.2.23"
+numexpr = "^2.10.1"
+langchainhub = "^0.1.20"
+duckduckgo-search = "^6.2.3"
+langchain-community = "^0.2.10"
 
 [tool.poetry.dev-dependencies]
 

@@ -102,6 +102,24 @@ tests-mypy = ["mypy (>=1.6)", "pytest-mypy-plugins"]
 tests-no-zope = ["attrs", "cloudpickle", "hypothesis", "pympler", "pytest-xdist", "pytest (>=4.3.0)"]
 
 [[package]]
+name = "beautifulsoup4"
+version = "4.12.3"
+description = "Screen-scraping library"
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+soupsieve = ">1.2"
+
+[package.extras]
+cchardet = ["cchardet"]
+chardet = ["chardet"]
+charset-normalizer = ["charset-normalizer"]
+html5lib = ["html5lib"]
+lxml = ["lxml"]
+
+[[package]]
 name = "blinker"
 version = "1.8.2"
 description = "Fast, simple object-to-object and broadcast signaling"
@@ -757,6 +775,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "soupsieve"
+version = "2.5"
+description = "A modern CSS selector implementation for Beautiful Soup."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
 name = "sqlalchemy"
 version = "2.0.31"
 description = "Database Abstraction Library"
@@ -949,7 +975,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.9.7 || >3.9.7,<4.0"
-content-hash = "ae94f423293e2d4cca9eaaf0367b11f808c9d3de2eadeee67199c2929938afb1"
+content-hash = "29ba0db163fd4c1c2548e8af664457bd19d5219d89e48a34d5c5b7d904446556"
 
 [metadata.files]
 aiohttp = []
@@ -959,6 +985,7 @@ annotated-types = []
 anyio = []
 async-timeout = []
 attrs = []
+beautifulsoup4 = []
 blinker = []
 cachetools = []
 certifi = []
@@ -1015,6 +1042,7 @@ six = [
 ]
 smmap = []
 sniffio = []
+soupsieve = []
 sqlalchemy = []
 streamlit = []
 tenacity = []

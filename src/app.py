@@ -8,7 +8,8 @@ This file is the main web UI
 import streamlit as st
 from langchain_openai import OpenAI
 
-st.title('Courtside Analytics')
+st.title('Courtside Analytics 🏀')
+st.subheader('Unveiling NBA insights through AI.')
 
 openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 

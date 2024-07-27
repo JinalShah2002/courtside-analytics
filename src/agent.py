@@ -45,7 +45,9 @@ class Agent:
                                              "and nothing else. Only input math expressions!")
         self.search = DuckDuckGoSearchRun()
         self.search.description = """A wrapper around DuckDuckGo Search. Useful for when you need to answer non-statistical questions about the NBA 
-                                such as what is the score of a given game or what player is on what team."""
+                                such as what is the score of a given game or what player is on what team. You can use this tool to prepare 
+                                queries before you look for statistics. For example, if a user asks for statistics, you can use this tool
+                                to find the current year of the NBA."""
         self.agent = create_react_agent(llm=self.llm,tools=[self.calculator,statmuse,self.search],prompt=self.prompt,stop_sequence=True)
         self.agent_executor = AgentExecutor(agent=self.agent,tools=[self.calculator,statmuse,self.search],verbose=logging,handle_parsing_errors=True)
     

@@ -24,35 +24,29 @@ poetry run streamlit run app.py
 ```
 
 ## System Design
-
 ``````mermaid
 graph TD
     A[User]
     B[Streamlit Web UI]
-    C[GPT 4.o]
-    D[Calculator]
-    E[Statmuse]
+    C[GPT 4.0]
     F[Answer]
-    G[DuckDuckGo Search]
     
     A -->|Query| B
-    B -->|Query| C
-    C --> D
-    C --> E
-    D --> F
-    E --> F
-    F --> B
+    B -->|Query| Agent
     B -->|Answer| A
-    C --> G
-    G --> F
     
     subgraph Agent
         C
-        D
-        E
-        G
+        subgraph Tools
+            D[Calculator]
+            E[Statmuse]
+            G[DuckDuckGo Search]
+        end
     end
-
+    
+    Agent --> F
+    F --> B
+    
     linkStyle default stroke:#FFFFFF
 ``````
 ## Author's Note

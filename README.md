@@ -54,3 +54,8 @@ graph TD
     end
 
     linkStyle default stroke:#FFFFFF
+``````
+## Author's Note
+
+Note, since Courtside Analytics is a platform that utilizes large language models (LLMs), it is important to be aware of the following:
+1. LLMs hallunicate. What this means is that they may provide false information. While having access to tools lowers this risk, it doesn't completely mitigate it. Whenever you use Courtside Analytics, you should be aware of this fact.

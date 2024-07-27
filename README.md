@@ -28,9 +28,10 @@ graph TD
     A[User]
     B[Streamlit Web UI]
     C[GPT 4.o]
-    D[calculator]
+    D[Calculator]
     E[Statmuse]
     F[Answer]
+    G[DuckDuckGo Search]
     
     A -->|Query| B
     B -->|Query| C
@@ -40,11 +41,14 @@ graph TD
     E --> F
     F --> B
     B -->|Answer| A
+    C --> G
+    G --> F
     
     subgraph Agent
         C
         D
         E
+        G
     end
 
     linkStyle default stroke:#FFFFFF

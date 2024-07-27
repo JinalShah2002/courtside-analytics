@@ -12,6 +12,7 @@ from langchain.agents import Tool
 from langchain.agents.react.agent import create_react_agent
 from langchain.agents.agent import AgentExecutor
 from langchain_core.tools import tool
+from langchain_community.tools import DuckDuckGoSearchRun
 import requests
 from bs4 import BeautifulSoup
 
@@ -42,9 +43,11 @@ class Agent:
                                              description="This is a calculator tool. You can use it when"+
                                              "you need to answer mathematical questions. This tool is only for math questions"+
                                              "and nothing else. Only input math expressions!")
-
-        self.agent = create_react_agent(llm=self.llm,tools=[self.calculator,statmuse],prompt=self.prompt,stop_sequence=True)
-        self.agent_executor = AgentExecutor(agent=self.agent,tools=[self.calculator,statmuse],verbose=logging)
+        self.search = DuckDuckGoSearchRun()
+        self.search.description = """A wrapper around DuckDuckGo Search. Useful for when you need to answer non-statistical questions about the NBA 
+                                such as what is the score of a given game or what player is on what team."""
+        self.agent = create_react_agent(llm=self.llm,tools=[self.calculator,statmuse,self.search],prompt=self.prompt,stop_sequence=True)
+        self.agent_executor = AgentExecutor(agent=self.agent,tools=[self.calculator,statmuse,self.search],verbose=logging,handle_parsing_errors=True)
     
     # Method to send input to agent
     def get_answer(self,query):

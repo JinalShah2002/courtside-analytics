@@ -7,6 +7,8 @@ Introducing Courtside Analytics, an AI powered platform that enables users to qu
 
 ## Demo
 
+https://github.com/user-attachments/assets/79a0f823-eec6-48d9-97ab-6735bbf26ee5
+
 ## How to use Courtside Analytics
 If you just want to use Courtside Analytics, you can navigate to the webpage.
 
